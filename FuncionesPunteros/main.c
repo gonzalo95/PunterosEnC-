@@ -3,6 +3,7 @@
 
 void intercambiarConPunteros(int*, int*);
 void intercambiar(int, int);
+void ponerEnCero(int*);
 
 int main()
 {
@@ -10,6 +11,7 @@ int main()
     int edadDos;
     edadUno = 22;
     edadDos = 99;
+    ponerEnCero(&edadDos);
     intercambiar(&edadUno, &edadDos);
     printf("\n edad 1: %d", edadUno);
     printf("\n edad 2: %d", edadDos);
@@ -32,4 +34,9 @@ void intercambiar(int num1, int num2)
     aux = num1;
     num1 = num2;
     num2 = aux;
+}
+
+void ponerEnCero(int* num)
+{
+    *num = 0;
 }
