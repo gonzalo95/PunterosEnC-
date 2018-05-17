@@ -8,13 +8,13 @@ int main()
     int numero;
     int numero2;
     numero = 66;
-    numero2 = &numero;
+    numero2 = &numero; // Asignacion de memoria
 
     punteroNumero = &numero;
     //*punteroNumero = &numero;
     //*punteroNumero = 55;
     printf("\na- %d\n", numero2);
-    numero2 = *punteroNumero;
+    numero2 = *punteroNumero; // Asignacion de valor
     printf("\nb- %d\n", numero2);
 
     printf(" %d ", numero);
