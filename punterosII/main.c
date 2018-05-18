@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void cargarArray(int *, int);
-void imprimirArray(int *, int);
+int cargarArray(int *, int);
+int imprimirArray(int *, int);
 
 int main()
 {
@@ -10,25 +10,46 @@ int main()
     int *puntero;
     puntero = vector;
 
-    cargarArray(vector, 3);
-    imprimirArray(vector, 3);
+    if(cargarArray(vector, 3))
+        printf("Carga exitosa\n");
+    else
+        printf("La bardiaste lince\n");
+
+    if(!imprimirArray(vector, 3))
+        printf("La bardiaste lince\n");
 
     return 0;
 }
 
-void cargarArray(int *puntero, int i)
+int cargarArray(int *puntero, int len)
 {
-    for(i = 0; i < 3; i++)
+    int retorno = 0;
+    if(puntero != NULL)
     {
-        printf("\nNumero: ");
-        scanf("%d", puntero + i);
+        retorno = 1;
+        int i;
+        for(i = 0; i < len; i++)
+        {
+            printf("\nNumero: ");
+            scanf("%d", puntero + i);
+        }
     }
+
+
+    return retorno;
 }
 
-void imprimirArray(int *puntero, int i)
+int imprimirArray(int *puntero, int len)
 {
-    for(i = 0; i < 3; i++)
+    int retorno = 0;
+    if(puntero != NULL)
     {
-        printf("%d\n", *(puntero + i));
+        retorno = 1;
+        int i;
+        for(i = 0; i < len; i++)
+        {
+            printf("%d\n", *(puntero + i));
+        }
     }
+    return retorno;
 }
